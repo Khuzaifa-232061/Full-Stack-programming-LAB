@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Async Data Loader – Lab 03 Task 3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page">
+
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo">⚡ <span>AsyncLoader</span></div>
+        <p class="lab-tag">Lab 03 · Task 3 · Promises · then() / catch()</p>
+      </div>
+    </header>
+
+    <main class="main-wrap">
+
+      <!-- Control Panel -->
+      <section class="control-panel">
+        <div class="control-group">
+          <label class="toggle-label">
+            <span>Simulate Server Failure</span>
+            <div class="toggle-wrapper">
+              <input type="checkbox" id="fail-toggle" />
+              <div class="toggle-track">
+                <div class="toggle-thumb"></div>
+              </div>
+            </div>
+          </label>
+          <p class="toggle-hint" id="toggle-hint">✅ Data will load successfully after 3s</p>
+        </div>
+        <button class="btn-load" id="load-btn" onclick="handleLoad()">
+          <span class="btn-icon">▶</span>
+          <span class="btn-text">Load Users</span>
+        </button>
+      </section>
+
+      <!-- Status / Loader -->
+      <div class="status-area" id="status-area">
+        <p class="idle-msg">Press <strong>Load Users</strong> to fetch data from the server.</p>
+      </div>
+
+      <!-- Results -->
+      <section id="results-section" class="results-section hidden">
+        <div class="results-header">
+          <h2 class="results-title">👥 Fetched Users</h2>
+          <span class="results-count" id="results-count"></span>
+        </div>
+        <div class="user-grid" id="user-grid"></div>
+      </section>
+
+      <!-- Promise Flow Diagram -->
+      <section class="flow-diagram">
+        <h3 class="flow-title">Promise Flow</h3>
+        <div class="flow-steps">
+          <div class="flow-step" id="step-call">
+            <div class="step-icon">📞</div>
+            <div class="step-label">fetchUsers() called</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" id="step-pending">
+            <div class="step-icon">⏳</div>
+            <div class="step-label">Promise Pending</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" id="step-settle">
+            <div class="step-icon" id="settle-icon">❓</div>
+            <div class="step-label" id="settle-label">resolve / reject</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" id="step-handler">
+            <div class="step-icon" id="handler-icon">🔲</div>
+            <div class="step-label" id="handler-label">.then() / .catch()</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Console Log Panel -->
+      <section class="console-panel">
+        <div class="console-header">
+          <span class="console-dot red"></span>
+          <span class="console-dot yellow"></span>
+          <span class="console-dot green"></span>
+          <span class="console-title">console</span>
+        </div>
+        <div class="console-body" id="console-body">
+          <p class="console-line muted">// Waiting for execution...</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="fetchUsers.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

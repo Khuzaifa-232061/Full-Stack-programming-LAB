@@ -1,0 +1,131 @@
+/* ── Reset & Base ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4ff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 16px;
+}
+
+/* ── Container ── */
+.container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 36px 40px;
+  max-width: 640px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #1a1a2e;
+}
+
+.subtitle {
+  color: #888;
+  margin-bottom: 28px;
+  font-size: 0.9rem;
+}
+
+/* ── Question Card ── */
+.question-card {
+  background: #f7f9ff;
+  border: 1px solid #dde3f5;
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-bottom: 18px;
+}
+
+.question-card p {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1a1a2e;
+}
+
+.question-card input[type="text"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccd2e8;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.question-card input[type="text"]:focus {
+  border-color: #4f6ef7;
+}
+
+/* ── Feedback colours ── */
+.question-card.correct {
+  border-color: #34d399;
+  background: #f0fdf9;
+}
+
+.question-card.wrong {
+  border-color: #f87171;
+  background: #fff5f5;
+}
+
+.feedback {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.feedback.correct { color: #059669; }
+.feedback.wrong   { color: #dc2626; }
+
+/* ── Buttons ── */
+.btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: #4f6ef7;
+  color: #fff;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover  { background: #3a57e8; }
+button:active { transform: scale(0.97); }
+
+.reset-btn {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.reset-btn:hover { background: #d1d5db; }
+
+/* ── Result Box ── */
+#result-box {
+  margin-top: 24px;
+  padding: 20px 24px;
+  border-radius: 8px;
+  display: none;           /* hidden until submission */
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+#result-box.excellent { background:#d1fae5; color:#065f46; border:1px solid #6ee7b7; }
+#result-box.good      { background:#dbeafe; color:#1e40af; border:1px solid #93c5fd; }
+#result-box.average   { background:#fef9c3; color:#854d0e; border:1px solid #fde047; }
+#result-box.poor      { background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; }
