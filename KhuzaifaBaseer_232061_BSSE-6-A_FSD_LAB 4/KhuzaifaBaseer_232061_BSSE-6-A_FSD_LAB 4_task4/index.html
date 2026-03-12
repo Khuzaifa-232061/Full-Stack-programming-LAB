@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tabbed Content</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header>
+    <h1>Knowledge Base</h1>
+    <p>Select a topic to explore</p>
+  </header>
+
+  <nav class="tab-nav" id="tabNav">
+    <button class="tab-btn active" data-target="html">HTML</button>
+    <button class="tab-btn" data-target="css">CSS</button>
+    <button class="tab-btn" data-target="javascript">JavaScript</button>
+    <button class="tab-btn" data-target="jquery">jQuery</button>
+    <button class="tab-btn" data-target="dom">DOM</button>
+  </nav>
+
+  <main class="content-area">
+
+    <section class="tab-section" id="html">
+      <h2>HTML — Structure of the Web</h2>
+      <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It defines the meaning and structure of web content using elements represented by tags.</p>
+      <ul>
+        <li>Semantic elements like <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code></li>
+        <li>Forms, tables, media elements</li>
+        <li>Accessibility through ARIA attributes</li>
+        <li>HTML5 introduced Canvas, Audio, Video APIs</li>
+      </ul>
+    </section>
+
+    <section class="tab-section hidden" id="css">
+      <h2>CSS — Style &amp; Layout</h2>
+      <p>CSS (Cascading Style Sheets) controls the visual presentation of HTML documents. Modern CSS enables powerful layouts, animations, and responsive designs without JavaScript.</p>
+      <ul>
+        <li>Flexbox and CSS Grid for layouts</li>
+        <li>Custom Properties (CSS Variables)</li>
+        <li>Keyframe animations and transitions</li>
+        <li>Media queries for responsive design</li>
+      </ul>
+    </section>
+
+    <section class="tab-section hidden" id="javascript">
+      <h2>JavaScript — Interactivity</h2>
+      <p>JavaScript is the programming language of the web, enabling dynamic content, interactivity, and complex logic directly in the browser without page reloads.</p>
+      <ul>
+        <li>Event-driven programming model</li>
+        <li>Promises and async/await for asynchronous code</li>
+        <li>ES6+ features: arrow functions, destructuring, modules</li>
+        <li>Full DOM manipulation capabilities</li>
+      </ul>
+    </section>
+
+    <section class="tab-section hidden" id="jquery">
+      <h2>jQuery — Write Less, Do More</h2>
+      <p>jQuery is a fast, small JavaScript library that simplifies HTML traversal, event handling, animation, and Ajax interactions for rapid web development.</p>
+      <ul>
+        <li>Simple DOM selection with <code>$(selector)</code></li>
+        <li>Built-in effects: fadeIn, slideUp, animate</li>
+        <li>Cross-browser compatible event handling</li>
+        <li>Easy Ajax with <code>$.get()</code> and <code>$.post()</code></li>
+      </ul>
+    </section>
+
+    <section class="tab-section hidden" id="dom">
+      <h2>DOM — Document Object Model</h2>
+      <p>The DOM is a programming interface for HTML documents. It represents the document as a tree of nodes, allowing scripts to dynamically access and update the content, structure, and styles.</p>
+      <ul>
+        <li>Tree-based document representation</li>
+        <li>Node types: Element, Text, Comment</li>
+        <li>Event bubbling and capturing</li>
+        <li>MutationObserver for tracking DOM changes</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
