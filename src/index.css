@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --black:       #0a0a0a;
+  --dark:        #111;
+  --mid:         #333;
+  --muted:       #777;
+  --light-muted: #aaa;
+  --white:       #f4f2ed;
+  --warm-white:  #ede9e2;
+  --accent:      #d4aa55;
+  --accent-dim:  #b8943d;
+  --font-display:'Anton', sans-serif;
+  --font-body:   'Space Mono', monospace;
+  --transition:  0.25s ease;
+  --border:      2px solid var(--black);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--white); color: var(--black); overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--accent); }
+
+.section-header-bar { display: flex; align-items: center; gap: 24px; padding: 16px 40px; border-bottom: var(--border); background: var(--black); }
+.section-header-bar.light { background: var(--white); border-bottom: var(--border); }
+.section-header-bar.light .bar-label { color: var(--black); }
+.section-header-bar.light .bar-line { background: var(--black); }
+.bar-label { font-family: var(--font-body); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+.bar-line { flex: 1; height: 1px; background: rgba(255,255,255,0.15); }
+
+.btn-primary { display: inline-block; font-family: var(--font-body); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); background: var(--black); padding: 16px 32px; border: var(--border); transition: background var(--transition), color var(--transition); cursor: pointer; }
+.btn-primary:hover { background: var(--accent); color: var(--black); border-color: var(--accent); }
+
+@keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInRight { from { opacity: 0; } to { opacity: 1; } }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
