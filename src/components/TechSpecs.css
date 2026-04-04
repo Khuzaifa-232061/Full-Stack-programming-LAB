@@ -1,0 +1,18 @@
+.tech-specs-section { background: var(--warm-white); }
+.specs-inner { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: var(--border); }
+.spec-block { padding: 48px 32px; border-right: var(--border); }
+.spec-block:last-child { border-right: none; }
+.spec-icon-wrap { width: 40px; height: 40px; border: 1px solid rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; color: var(--accent); margin-bottom: 20px; }
+.spec-icon-wrap svg { width: 20px; height: 20px; }
+.spec-block h4 { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.06em; color: var(--black); text-transform: uppercase; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--accent); }
+.spec-block ul li { font-family: var(--font-body); font-size: 0.72rem; color: var(--muted); line-height: 2.2; }
+.spec-block ul li::before { content: '// '; color: var(--accent); font-size: 0.65rem; }
+
+@media (max-width: 1024px) {
+  .specs-inner { grid-template-columns: 1fr 1fr; }
+  .spec-block:nth-child(2) { border-right: none; }
+}
+@media (max-width: 768px) {
+  .specs-inner { grid-template-columns: 1fr; }
+  .spec-block { border-right: none; }
+}
