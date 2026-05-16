@@ -1,0 +1,188 @@
+/* ── Reset & Base ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #1a1a2e;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+/* ── Main Container ── */
+.container {
+  background: #16213e;
+  border-radius: 16px;
+  padding: 40px 44px;
+  max-width: 680px;
+  width: 100%;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  border: 1px solid #0f3460;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #e2e8f0;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-bottom: 32px;
+}
+
+/* ── Calc Card ── */
+.calc-box {
+  background: #0f3460;
+  border-radius: 12px;
+  padding: 28px 30px;
+}
+
+/* ── Input Row ── */
+.input-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 120px;
+}
+
+.operator-field {
+  flex: 1.4;
+}
+
+label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+input[type="number"],
+select {
+  padding: 12px 14px;
+  border: 1px solid #1e4080;
+  border-radius: 8px;
+  background: #16213e;
+  color: #e2e8f0;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+input[type="number"]:focus,
+select:focus {
+  border-color: #4f91f7;
+  box-shadow: 0 0 0 3px rgba(79,145,247,0.2);
+}
+
+select option {
+  background: #16213e;
+}
+
+/* ── Buttons ── */
+.btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+button {
+  flex: 1;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: #4f91f7;
+  color: #fff;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover  { background: #3a78e4; }
+button:active { transform: scale(0.97); }
+
+.clear-btn {
+  background: #334155;
+  color: #94a3b8;
+}
+
+.clear-btn:hover { background: #475569; }
+
+/* ── Result Box ── */
+.result-box {
+  margin-top: 22px;
+  border-radius: 10px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.4s ease, border 0.4s ease;
+}
+
+.result-box.hidden  { display: none; }
+
+/* Bonus: positive = green tint, negative = red tint, zero = neutral */
+.result-box.positive {
+  background: #052e16;
+  border: 1px solid #16a34a;
+}
+
+.result-box.negative {
+  background: #2d0a0a;
+  border: 1px solid #dc2626;
+}
+
+.result-box.zero {
+  background: #1e293b;
+  border: 1px solid #475569;
+}
+
+#expression {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+}
+
+#result-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.result-box.positive #result-value { color: #4ade80; }
+.result-box.negative #result-value { color: #f87171; }
+.result-box.zero     #result-value { color: #94a3b8; }
+
+/* ── Error Box ── */
+.error-box {
+  margin-top: 22px;
+  background: #2d0a0a;
+  border: 1px solid #dc2626;
+  border-radius: 10px;
+  padding: 14px 20px;
+  color: #f87171;
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.error-box.hidden { display: none; }
