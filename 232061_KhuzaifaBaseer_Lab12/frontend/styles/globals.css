@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  --primary: #E8640A;
+  --primary-dark: #C4540A;
+  --wood-dark: #3A2A1A;
+  --wood-mid: #8B6840;
+  --cream: #FAF7F2;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2.5 font-semibold uppercase tracking-wide text-sm hover:bg-primary-dark transition-all duration-200 rounded-sm;
+  }
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-2.5 font-semibold uppercase tracking-wide text-sm hover:bg-primary hover:text-white transition-all duration-200 rounded-sm;
+  }
+  .section-title {
+    @apply text-3xl font-heading font-bold text-wood-800 mb-2;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  .orange-bar {
+    @apply w-12 h-1 bg-primary mb-4;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+/* Toast override */
+.go2072408551 { font-family: 'Lato', sans-serif !important; }
